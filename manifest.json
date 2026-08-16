@@ -1,6 +1,6 @@
 {
 	"id": "side-thing",
-	"name": "Side Comments",
+	"name": "side Thing",
 	"version": "1.0.0",
 	"minAppVersion": "1.7.2",
 	"description": "Add marginal (sidebar) comments to selected text in your notes.",
