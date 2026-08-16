@@ -1,0 +1,214 @@
+/* Side Comments plugin styles */
+
+/* Ползунок прозрачности в настройках */
+.side-comment-opacity-slider {
+	display: flex;
+	align-items: center;
+	margin-left: 8px;
+}
+
+.side-comment-opacity-slider input[type='range'] {
+	width: 80px;
+	height: 4px;
+}
+
+/* Подсветка выделенного фрагмента с комментарием */
+.side-comment-highlight {
+	background-color: rgba(255, 213, 79, 0.3);
+	border-bottom: 2px solid rgba(255, 180, 0, 0.6);
+	border-radius: 2px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+}
+
+.side-comment-highlight:hover {
+	background-color: rgba(255, 213, 79, 0.5);
+}
+
+/* Маркер комментария в конце выделения */
+.side-comment-marker {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 2px;
+	width: 16px;
+	height: 16px;
+	color: var(--text-muted);
+	opacity: 0.6;
+	cursor: pointer;
+	user-select: none;
+	vertical-align: middle;
+	transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.side-comment-marker svg {
+	width: 14px;
+	height: 14px;
+}
+
+.side-comment-marker:hover {
+	opacity: 1;
+	color: var(--interactive-accent);
+}
+
+/* Floating-попап для создания/редактирования комментария */
+.side-comment-popover {
+	width: 400px;
+	max-width: 90vw;
+}
+
+.side-comment-popover .modal-content {
+	padding: 0;
+}
+
+.side-comment-popover-header {
+	display: flex;
+	align-items: center;
+	padding: 12px 16px 8px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.side-comment-popover-title {
+	font-weight: 600;
+	font-size: var(--font-ui-medium);
+}
+
+.side-comment-popover-quote {
+	padding: 8px 16px;
+	background-color: var(--background-secondary);
+	border-left: 3px solid var(--interactive-accent);
+	margin: 0 0 8px;
+}
+
+.side-comment-popover-quote-text {
+	font-style: italic;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.side-comment-popover-textarea {
+	width: 100%;
+	min-height: 100px;
+	padding: 12px 16px;
+	border: none;
+	background: transparent;
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	font-size: var(--font-ui-small);
+	resize: vertical;
+	outline: none;
+}
+
+.side-comment-popover-textarea:focus {
+	outline: none;
+}
+
+.side-comment-popover-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	padding: 8px 16px 12px;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.side-comment-popover-btn {
+	font-size: var(--font-ui-small);
+}
+
+.side-comment-popover-delete {
+	color: var(--text-error);
+}
+
+/* Сайдбар со списком комментариев */
+.side-comments-view-header {
+	padding: 12px 16px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.side-comments-view-header h4 {
+	margin: 0;
+	font-size: var(--font-ui-medium);
+	font-weight: 600;
+}
+
+.side-comments-view-list {
+	padding: 8px;
+	overflow-y: auto;
+}
+
+.side-comments-view-empty {
+	padding: 24px 16px;
+	text-align: center;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.side-comments-view-item {
+	padding: 10px 12px;
+	margin-bottom: 8px;
+	border-radius: 6px;
+	background-color: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	cursor: pointer;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.side-comments-view-item:hover {
+	background-color: var(--background-secondary-alt);
+	border-color: var(--interactive-accent);
+}
+
+.side-comments-view-item-quote {
+	margin-bottom: 6px;
+	padding-left: 8px;
+	border-left: 2px solid var(--interactive-accent);
+}
+
+.side-comments-view-item-quote-text {
+	font-style: italic;
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.side-comments-view-item-body {
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	margin-bottom: 6px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.side-comments-view-item-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 6px;
+}
+
+.side-comments-view-item-date {
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
+}
+
+.side-comments-view-item-actions {
+	display: flex;
+	gap: 6px;
+	justify-content: flex-end;
+}
+
+.side-comments-view-item-btn {
+	font-size: var(--font-ui-smaller);
+	padding: 2px 8px;
+}
+
+.side-comments-view-item-delete {
+	color: var(--text-error);
+}
