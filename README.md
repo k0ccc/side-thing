@@ -2,6 +2,8 @@
 
 An Obsidian plugin for adding marginal (sidebar) comments to selected text in your notes (google doc vibe).
 
+![settings/plugin](./screens/all.png)
+
 ## Features
 
 - **Add comments** to any selected text fragment via command palette or right-click context menu
