@@ -147,7 +147,6 @@ export class SideCommentsView extends ItemView {
 
 			// Клик по элементу — прокрутка к выделению
 			item.addEventListener('click', () => {
-				console.log('[SideComments] Sidebar item clicked, id:', comment.id);
 				this.plugin.navigateToComment(comment.id);
 			});
 		}
