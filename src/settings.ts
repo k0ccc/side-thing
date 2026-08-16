@@ -95,7 +95,7 @@ export class SideCommentsSettingTab extends PluginSettingTab {
 		opacitySlider.max = '1';
 		opacitySlider.step = '0.05';
 		opacitySlider.value = String(a);
-		opacitySlider.addEventListener('input', async () => {
+		opacitySlider.addEventListener('input', () => {
 			const newAlpha = parseFloat(opacitySlider.value);
 			// Пересобираем rgba из hex color picker
 			const hex = hexColor.replace('#', '');
@@ -103,9 +103,10 @@ export class SideCommentsSettingTab extends PluginSettingTab {
 			const newG = parseInt(hex.substring(2, 4), 16);
 			const newB = parseInt(hex.substring(4, 6), 16);
 			this.plugin.settings.highlightColor = `rgba(${newR}, ${newG}, ${newB}, ${newAlpha})`;
-			await this.plugin.saveSettings();
-			this.plugin.refreshEditorExtensions();
-			if (textInput) textInput.value = this.plugin.settings.highlightColor;
+			void this.plugin.saveSettings().then(() => {
+				this.plugin.refreshEditorExtensions();
+				if (textInput) textInput.value = this.plugin.settings.highlightColor;
+			});
 		});
 
 		new Setting(containerEl)
